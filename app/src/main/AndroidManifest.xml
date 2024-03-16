@@ -14,6 +14,7 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" tools:ignore="ScopedStorage" />
 
     <!-- 拍照权限 -->
+    <uses-feature android:name="android.hardware.camera" android:required="false" />
     <uses-permission android:name="android.permission.CAMERA" />
 
     <!-- 安装权限 -->
@@ -62,6 +63,7 @@
         <activity
             android:name=".ui.activity.SplashActivity"
             android:launchMode="singleTop"
+            android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/SplashTheme">
 
@@ -236,7 +238,8 @@
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:exported="true"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-
+        <meta-data android:name="com.hjq.demo.http.glide.GlideConfig"
+            android:value="AppGlideModule"/>
     </application>
 
     <!-- Android 11 软件包可见性适配：https://www.jianshu.com/p/d1ccd425c4ce -->
