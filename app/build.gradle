@@ -4,6 +4,7 @@ apply from : '../common.gradle'
 
 // Android 代码规范文档：https://github.com/getActivity/AndroidCodeStandard
 android {
+    namespace('com.hjq.demo')
 
     // 资源目录存放指引：https://developer.android.google.cn/guide/topics/resources/providing-resources
     defaultConfig {
@@ -22,8 +23,6 @@ android {
 
         // 日志打印开关
         buildConfigField('boolean', 'LOG_ENABLE', '' + LOG_ENABLE + '')
-        // 测试包下的 BuglyId
-//        buildConfigField('String', 'BUGLY_ID', '"' + BUGLY_ID + '"')
         // 测试服务器的主机地址
         buildConfigField('String', 'HOST_URL', '"' + HOST_URL + '"')
     }
@@ -61,7 +60,7 @@ android {
             ])
             // 调试模式下只保留一种架构的 so 库，提升打包速度
             ndk {
-                abiFilters 'armeabi-v7a'
+                abiFilters 'armeabi-v7a', 'arm64-v8a'
             }
         }
 
