@@ -28,7 +28,6 @@ import com.hjq.demo.ui.activity.VideoPlayActivity;
 import com.hjq.demo.ui.activity.VideoSelectActivity;
 import com.hjq.demo.ui.dialog.InputDialog;
 import com.hjq.demo.ui.dialog.MessageDialog;
-import com.tencent.bugly.crashreport.CrashReport;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -170,9 +169,9 @@ public final class MineFragment extends TitleBarFragment<HomeActivity> {
         } else if (viewId == R.id.btn_mine_crash) {
 
             // 上报错误到 Bugly 上
-            CrashReport.postCatchedException(new IllegalStateException("are you ok?"));
+//            CrashReport.postCatchedException(new IllegalStateException("are you ok?"));
             // 关闭 Bugly 异常捕捉
-            CrashReport.closeBugly();
+//            CrashReport.closeBugly();
             throw new IllegalStateException("are you ok?");
 
         } else if (viewId == R.id.btn_mine_pay) {

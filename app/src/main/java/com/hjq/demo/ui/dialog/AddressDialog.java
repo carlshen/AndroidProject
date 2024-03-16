@@ -20,7 +20,6 @@ import com.hjq.demo.R;
 import com.hjq.demo.aop.SingleClick;
 import com.hjq.demo.app.AppAdapter;
 import com.hjq.demo.ui.adapter.TabAdapter;
-import com.tencent.bugly.crashreport.CrashReport;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -485,7 +484,7 @@ public final class AddressDialog {
                 return list;
 
             } catch (JSONException e) {
-                CrashReport.postCatchedException(e);
+//                CrashReport.postCatchedException(e);
             }
             return null;
         }
@@ -508,7 +507,7 @@ public final class AddressDialog {
 
                 return list;
             } catch (JSONException e) {
-                CrashReport.postCatchedException(e);
+//                CrashReport.postCatchedException(e);
                 return null;
             }
         }
@@ -531,7 +530,7 @@ public final class AddressDialog {
                 }
                 return list;
             } catch (JSONException e) {
-                CrashReport.postCatchedException(e);
+//                CrashReport.postCatchedException(e);
                 return null;
             }
         }
@@ -552,7 +551,7 @@ public final class AddressDialog {
                 inputStream.close();
                 return new JSONArray(outStream.toString());
             } catch (IOException | JSONException e) {
-                CrashReport.postCatchedException(e);
+//                CrashReport.postCatchedException(e);
             }
             return null;
         }

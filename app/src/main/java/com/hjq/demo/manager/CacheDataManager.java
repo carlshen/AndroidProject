@@ -3,8 +3,6 @@ package com.hjq.demo.manager;
 import android.content.Context;
 import android.os.Environment;
 
-import com.tencent.bugly.crashreport.CrashReport;
-
 import java.io.File;
 import java.math.BigDecimal;
 
@@ -77,7 +75,7 @@ public final class CacheDataManager {
                 }
             }
         } catch (Exception e) {
-            CrashReport.postCatchedException(e);
+//            CrashReport.postCatchedException(e);
         }
         return size;
     }

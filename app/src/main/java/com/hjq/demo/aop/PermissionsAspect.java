@@ -5,7 +5,6 @@ import android.app.Activity;
 import com.hjq.demo.manager.ActivityManager;
 import com.hjq.demo.other.PermissionCallback;
 import com.hjq.permissions.XXPermissions;
-import com.tencent.bugly.crashreport.CrashReport;
 
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
@@ -72,7 +71,7 @@ public class PermissionsAspect {
                                 // 获得权限，执行原方法
                                 joinPoint.proceed();
                             } catch (Throwable e) {
-                                CrashReport.postCatchedException(e);
+//                                CrashReport.postCatchedException(e);
                             }
                         }
                     }

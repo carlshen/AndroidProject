@@ -28,7 +28,6 @@ import com.hjq.demo.manager.ThreadPoolManager;
 import com.hjq.demo.other.AppConfig;
 import com.hjq.permissions.Permission;
 import com.hjq.permissions.XXPermissions;
-import com.tencent.bugly.crashreport.CrashReport;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
@@ -249,7 +248,7 @@ public final class CrashActivity extends AppActivity {
             }
 
         } catch (PackageManager.NameNotFoundException e) {
-            CrashReport.postCatchedException(e);
+//            CrashReport.postCatchedException(e);
         }
     }
 

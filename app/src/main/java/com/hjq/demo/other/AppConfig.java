@@ -55,9 +55,9 @@ public final class AppConfig {
     /**
      * 获取 Bugly Id
      */
-    public static String getBuglyId() {
-        return BuildConfig.BUGLY_ID;
-    }
+//    public static String getBuglyId() {
+//        return BuildConfig.BUGLY_ID;
+//    }
 
     /**
      * 获取服务器主机地址

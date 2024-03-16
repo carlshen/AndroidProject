@@ -20,17 +20,11 @@ import com.hjq.demo.ui.dialog.MessageDialog;
 import com.hjq.demo.ui.dialog.PayPasswordDialog;
 import com.hjq.demo.ui.dialog.SafeDialog;
 import com.hjq.demo.ui.dialog.SelectDialog;
-import com.hjq.demo.ui.dialog.ShareDialog;
 import com.hjq.demo.ui.dialog.TimeDialog;
 import com.hjq.demo.ui.dialog.TipsDialog;
 import com.hjq.demo.ui.dialog.UpdateDialog;
 import com.hjq.demo.ui.dialog.WaitDialog;
 import com.hjq.demo.ui.popup.ListPopup;
-import com.hjq.umeng.Platform;
-import com.hjq.umeng.UmengClient;
-import com.hjq.umeng.UmengShare;
-import com.umeng.socialize.media.UMImage;
-import com.umeng.socialize.media.UMWeb;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -410,32 +404,32 @@ public final class DialogActivity extends AppActivity {
 
             toast("记得改好第三方 AppID 和 Secret，否则会调不起来哦");
 
-            UMWeb content = new UMWeb("https://github.com/getActivity/AndroidProject");
-            content.setTitle("Github");
-            content.setThumb(new UMImage(this, R.mipmap.launcher_ic));
-            content.setDescription(getString(R.string.app_name));
-
-            // 分享对话框
-            new ShareDialog.Builder(this)
-                    .setShareLink(content)
-                    .setListener(new UmengShare.OnShareListener() {
-
-                        @Override
-                        public void onSucceed(Platform platform) {
-                            toast("分享成功");
-                        }
-
-                        @Override
-                        public void onError(Platform platform, Throwable t) {
-                            toast(t.getMessage());
-                        }
-
-                        @Override
-                        public void onCancel(Platform platform) {
-                            toast("分享取消");
-                        }
-                    })
-                    .show();
+//            UMWeb content = new UMWeb("https://github.com/getActivity/AndroidProject");
+//            content.setTitle("Github");
+//            content.setThumb(new UMImage(this, R.mipmap.launcher_ic));
+//            content.setDescription(getString(R.string.app_name));
+//
+//            // 分享对话框
+//            new ShareDialog.Builder(this)
+//                    .setShareLink(content)
+//                    .setListener(new UmengShare.OnShareListener() {
+//
+//                        @Override
+//                        public void onSucceed(Platform platform) {
+//                            toast("分享成功");
+//                        }
+//
+//                        @Override
+//                        public void onError(Platform platform, Throwable t) {
+//                            toast(t.getMessage());
+//                        }
+//
+//                        @Override
+//                        public void onCancel(Platform platform) {
+//                            toast("分享取消");
+//                        }
+//                    })
+//                    .show();
 
         } else if (viewId == R.id.btn_dialog_update) {
 
@@ -525,6 +519,6 @@ public final class DialogActivity extends AppActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         // 友盟回调
-        UmengClient.onActivityResult(this, requestCode, resultCode, data);
+//        UmengClient.onActivityResult(this, requestCode, resultCode, data);
     }
 }
